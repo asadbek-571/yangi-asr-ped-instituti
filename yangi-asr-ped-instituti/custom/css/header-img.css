@@ -1,0 +1,231 @@
+
+
+#header .back-img {
+    height: 400px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/fon_univer.jpg");
+    background-position: center;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.back-img .about-page {
+    width: fit-content;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-page i {
+    color: yellow;
+    font-size: 28px;
+}
+
+.about-page h6 {
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.bgground {
+    float: left;
+    background: #191934;
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+
+.breadcrumbs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs li:first-child {
+    font-size: 19px;
+}
+
+.breadcrumbs li {
+    margin: 0;
+    padding: 0;
+    float: left;
+    font-family: Helvetica Neue, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 20px;
+    color: #999;
+}
+
+.breadcrumbs li a {
+    display: block;
+    padding: 0 40px 0 0;
+    color: #ccc;
+    text-decoration: none;
+    height: 10px;
+    position: relative;
+    perspective: 700px;
+}
+
+.breadcrumbs li a:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+
+    -webkit-backface-visibility: hidden;
+    outline: 1px solid transparent;
+
+    position: absolute;
+    right: 20px;
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    -ms-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+    -webkit-transform: rotateZ(45deg) skew(10deg, 10deg);
+    -moz-transform: rotateZ(45deg) skew(10deg, 10deg);
+    -ms-transform: rotateZ(45deg) skew(10deg, 10deg);
+    transform: rotateZ(45deg) skew(10deg, 10deg);
+}
+
+.breadcrumbs li a:hover:after {
+    right: 15px;
+    -webkit-transform: rotateZ(45deg) skew(-10deg, -10deg);
+    -moz-transform: rotateZ(45deg) skew(-10deg, -10deg);
+    -ms-transform: rotateZ(45deg) skew(-10deg, -10deg);
+    transform: rotateZ(45deg) skew(-10deg, -10deg);
+}
+
+.social {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.social a {
+    display: inline-block;
+    padding: 5px;
+
+}
+
+.social a i {
+    color: #3b1e59;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    line-height: 30px !important;
+    border: 3px solid #fff;
+    opacity: .8;
+    transition-property: transform;
+    -moz-transition-property: -moz-transform;
+    -webkit-transition-property: -webkit-transform;
+    transition: all 0.6s cubic-bezier(0.88, -0.48, 0.38, 1.85);
+    border-radius: 50%;
+
+}
+
+.social a i:hover {
+    opacity: 1;
+    border-radius: 20%;
+
+}
+
+.social a:hover i.fa-facebook, .social a:hover i.fa-telegram-plane {
+    transition: .6s ease-in;
+    background: #0088cc;
+    color: white;
+    border: 3px solid #00aaff;
+
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
+.social a:hover i.fa-youtube {
+    transition: .6s ease-in;
+    background: #FF3D00;
+    color: white;
+    border: 3px solid #FF6f33;
+
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
+.social a:hover i.fa-at {
+    transition: .6s ease-in;
+    background: #D44638;
+    color: white;
+    border: 3px solid #fd8e8e;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
+.social a:hover i.fa-instagram {
+    transition: .6s ease-in;
+    background: linear-gradient(#F58529 20%, #FEDA77 50%, #DD2A7B 75%, #8134AF 90%, #515BD4);
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    border: 3px solid #fd8e8e;
+    color: white;
+}
+
+#content .left-link-wrapper {
+    width: 100%;
+}
+
+.left-link-wrapper .link-header {
+    background-color: var(--blue);
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.left-link-wrapper .link-body {
+    background-color: #fff;
+    list-style: none;
+    padding: 2px;
+    box-shadow: 0 0 15px #555;
+}
+
+.link-body li {
+    border-radius: 5px!important;
+}
+
+.link-body li a {
+    padding: 7px;
+    text-decoration: none;
+    color: #333;
+    width: 100%;
+    display: block;
+}
+
+.link-body li:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.link-body li:hover {
+    background-color: var(--blue);
+}
+
+.link-body li:hover a {
+    color: #fff;
+}
+
+#content .content-header {
+    width: 100%;
+    background-color: var(--blue);
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+}

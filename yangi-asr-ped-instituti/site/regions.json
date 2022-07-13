@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "nameUz": "Qoraqalpog‘iston Respublikasi",
+    "nameOz": "Қорақалпоғистон Республикаси",
+    "nameRu": "Республика Каракалпакстан"
+  },
+  {
+    "id": 2,
+    "nameUz": "Andijon viloyati",
+    "nameOz": "Андижон вилояти",
+    "nameRu": "Андижанская область"
+  },
+  {
+    "id": 3,
+    "nameUz": "Buxoro viloyati",
+    "nameOz": "Бухоро вилояти",
+    "nameRu": "Бухарская область"
+  },
+  {
+    "id": 4,
+    "nameUz": "Jizzax viloyati",
+    "nameOz": "Жиззах вилояти",
+    "nameRu": "Джизакская область"
+  },
+  {
+    "id": 5,
+    "nameUz": "Qashqadaryo viloyati",
+    "nameOz": "Қашқадарё вилояти",
+    "nameRu": "Кашкадарьинская область"
+  },
+  {
+    "id": 6,
+    "nameUz": "Navoiy viloyati",
+    "nameOz": "Навоий вилояти",
+    "nameRu": "Навоийская область"
+  },
+  {
+    "id": 7,
+    "nameUz": "Namangan viloyati",
+    "nameOz": "Наманган вилояти",
+    "nameRu": "Наманганская область"
+  },
+  {
+    "id": 8,
+    "nameUz": "Samarqand viloyati",
+    "nameOz": "Самарқанд вилояти",
+    "nameRu": "Самаркандская область"
+  },
+  {
+    "id": 9,
+    "nameUz": "Surxandaryo viloyati",
+    "nameOz": "Сурхандарё вилояти",
+    "nameRu": "Сурхандарьинская область"
+  },
+  {
+    "id": 10,
+    "nameUz": "Sirdaryo viloyati",
+    "nameOz": "Сирдарё вилояти",
+    "nameRu": "Сырдарьинская область"
+  },
+  {
+    "id": 11,
+    "nameUz": "Toshkent viloyati",
+    "nameOz": "Тошкент вилояти",
+    "nameRu": "Ташкентская область"
+  },
+  {
+    "id": 12,
+    "nameUz": "Farg‘ona viloyati",
+    "nameOz": "Фарғона вилояти",
+    "nameRu": "Ферганская область"
+  },
+  {
+    "id": 13,
+    "nameUz": "Xorazm viloyati",
+    "nameOz": "Хоразм вилояти",
+    "nameRu": "Хорезмская область"
+  },
+  {
+    "id": 14,
+    "nameUz": "Toshkent shahri",
+    "nameOz": "Тошкент шаҳри",
+    "nameRu": "Город Ташкент"
+  }
+]

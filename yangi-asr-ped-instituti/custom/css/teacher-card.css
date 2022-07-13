@@ -1,0 +1,80 @@
+.teacher-card {
+    width: 100%;
+    border: 1px solid #aaa;
+}
+
+.teacher-card .card-header {
+    width: 100%;
+    color: #000;
+    text-align: center;
+    background-color: #aaa;
+    border-radius: 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.teacher-card .card-body {
+    display: flex;
+    background-color: #fff;
+    padding: 0;
+}
+
+.teacher-card .card-body-certificate {
+    display: flex;
+    background-color: #fff;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.teacher-card .left-side {
+    width: 40%;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    padding: 10px 20px;
+}
+
+.teacher-card .left-side img {
+    width: 100%;
+    height: 100%;
+}
+
+.teacher-card .right-side {
+    width: 60%;
+    padding: 10px 20px;
+    border-bottom: 1px solid #aaa;
+    color: #000;
+}
+
+.teacher-card .right-side p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .teacher-card .left-side, .teacher-card .right-side {
+        width: 100%;
+    }
+
+    .teacher-card .card-body {
+        flex-direction: column;
+    }
+}
+
+.kafedra-box {
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background: #667db6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.5s all ease-in;
+}
+
+.kafedra-box a{
+    color: #fff;
+}

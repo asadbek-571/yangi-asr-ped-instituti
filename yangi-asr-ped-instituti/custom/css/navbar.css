@@ -1,0 +1,225 @@
+
+.navigation {
+    height: 100px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 25;
+    padding: 17.5px 0;
+}
+
+
+.brand {
+    position: absolute;
+    padding-left: 20px;
+    float: left;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.brand a {
+    display: block;
+    width: 80px;
+    text-decoration: none;
+}
+
+.brand a img {
+    max-width: 100%;
+    border-radius: 50%;
+    height: 60px;
+}
+
+.university-name p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+    color: #011E46;
+    text-align: center;
+}
+
+.nav-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    float: left;
+    position: relative;
+}
+
+nav ul li a, nav ul li a:visited {
+    display: block;
+    padding: 0 15px;
+    line-height: 55px;
+    color: #000;
+    background: #fff;
+    text-decoration: none;
+}
+
+nav ul li a {
+    background: transparent;
+    color: #000;
+    font-size: 14px;
+    width: 100%;
+}
+
+nav ul li a:hover, nav ul li a:visited:hover {
+    background: var(--blue);
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.navbar-dropdown {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.navbar-dropdown li a {
+    background: #fff;
+    color: #4f4f4f !important;
+    border-radius: 10px;
+
+}
+
+
+.navbar-dropdown li a:hover {
+    color: #fff !important;
+}
+
+nav ul li a:not(:only-child):after, nav ul li a:visited:not(:only-child):after {
+    padding-left: 4px;
+    content: ' \025BE';
+}
+
+nav ul li ul li {
+    min-width: 190px;
+    width: 100%;
+}
+
+nav ul li ul li a {
+    padding: 15px;
+    line-height: 20px;
+}
+
+.navbar-dropdown {
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+/* Mobile navigation */
+.nav-mobile {
+    display: none;
+    position: absolute;
+    top: 17.5px;
+    right: 0;
+    background: transparent;
+    height: 55px;
+    width: 70px;
+}
+
+@media only screen and (max-width: 992px) {
+    .nav-mobile {
+        display: block;
+    }
+
+    nav {
+        width: 100%;
+        padding: 75px 0 15px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul li {
+        float: none;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        line-height: 20px;
+        background: #fff;
+    }
+
+    nav ul li ul li a {
+        padding-left: 30px;
+    }
+
+    .navbar-dropdown {
+        position: static;
+    }
+
+    @media screen and (min-width: 992px) {
+        .nav-list {
+            display: block !important;
+        }
+    }
+    #navbar-toggle {
+        position: absolute;
+        left: 18px;
+        top: 15px;
+        cursor: pointer;
+        padding: 10px 35px 16px 0;
+    }
+
+    #navbar-toggle span, #navbar-toggle span:before, #navbar-toggle span:after {
+        cursor: pointer;
+        border-radius: 1px;
+        height: 3px;
+        width: 30px;
+        background: #000;
+        position: absolute;
+        display: block;
+        content: '';
+        transition: all 300ms ease-in-out;
+    }
+
+    #navbar-toggle span:before {
+        top: -10px;
+    }
+
+    #navbar-toggle span:after {
+        bottom: -10px;
+    }
+
+    #navbar-toggle.active span {
+        background-color: transparent;
+    }
+
+    #navbar-toggle.active span:before, #navbar-toggle.active span:after {
+        top: 0;
+    }
+
+    #navbar-toggle.active span:before {
+        transform: rotate(45deg);
+    }
+
+    #navbar-toggle.active span:after {
+        transform: rotate(-45deg);
+    }
+}
+
+@media (max-width: 550px) {
+    .brand a{
+        width: 60px;
+    }
+
+    .brand p{
+        font-size: 18px;
+    }
+
+    .university-name{
+        height: fit-content;
+    }
+}

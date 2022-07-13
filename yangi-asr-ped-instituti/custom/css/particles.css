@@ -1,0 +1,7 @@
+#particles-js{
+    width: 100%;
+    min-height: 200px;
+    background: #01269f;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "facultyId": 1,
+    "nameUz": "Iqsodiyot (tarmoqlari va soxalar bo'yicha)",
+    "nameOz": "Иқсодиёт (тармоқлари ва сохалар бўйича)",
+    "nameRu": "Экономика (по отраслям и отраслям)",
+    "nameEn": "Economics (by branches and sectors)"
+  },
+  {
+    "id": 2,
+    "facultyId": 1,
+    "nameUz": "Moliya va moliyaviy texnalogyalar",
+    "nameOz": "Молия ва молиявий техналогялар",
+    "nameRu": "Финансы и финансовые технологии",
+    "nameEn": "Finance and financial technologies"
+  },
+  {
+    "id": 3,
+    "facultyId": 1,
+    "nameUz": "Bugalterya hisobi va audit",
+    "nameOz": "Бухгалтерия ҳисоби ва аудит",
+    "nameRu": "Бухгалтерский учет и аудит",
+    "nameEn": "Accounting and auditing"
+  },
+  {
+    "id": 4,
+    "facultyId": 2,
+    "nameUz": "Boshlang'ich ta'lim",
+    "nameOz": "Бошланғич таълим",
+    "nameRu": "Начальное образование",
+    "nameEn": "Primary education"
+  },
+  {
+    "id": 5,
+    "facultyId": 2,
+    "nameUz": "Maktabgacha ta'lim",
+    "nameOz": "Мактабгача таълим",
+    "nameRu": "Дошкольное образование",
+    "nameEn": "Preschool education"
+  },
+  {
+    "id": 6,
+    "facultyId": 2,
+    "nameUz": "Xorijiy til va adabyot",
+    "nameOz": "Хорижий тил ва адабёт",
+    "nameRu": "Иностранный язык и литература",
+    "nameEn": "Foreign language and literature"
+  }
+]

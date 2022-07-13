@@ -1,0 +1,53 @@
+.menu-wrapper {
+    position: fixed;
+    top: 150px;
+    right: 70px;
+    z-index: 3;
+}
+
+.menu {
+    position: relative;
+}
+
+.menu a {
+    width: 65px !important;
+    position: absolute;
+    background-color: black;
+    padding: 15px 10px;
+    border: 3px solid white;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.menu a:nth-child(1) {
+    background-color: lightblue;
+}
+
+.menu a:nth-child(1) {
+    top: 65px;
+}
+
+.menu a:nth-child(2) {
+    background-color: darkblue;
+}
+
+.menu a:nth-child(2) {
+    top: 130px;
+}
+
+
+.menu a:nth-child(3) {
+    background-color: red;
+}
+
+.menu a:nth-child(3) {
+    top: 195px;
+}
+
+.menu a:nth-child(4) {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
