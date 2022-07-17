@@ -28,7 +28,201 @@
 
 
     <!-- Yandex.Metrika counter -->
-<script>function ValueDate() {
+<script>function submitFourForm() {
+    const facultyId = $('select[name=faculty_id]').val()
+    const departmentId = $('select[name=department_id]').val()
+    const educationTypeId = $('select[name=education_type_id]').val()
+    const educationLanguageId = $('select[name=education_language_id]').val()
+    const filialId = $('select[name=filial_id]').val()
+    // const typePayment = $('input[name=type_payment]').val()
+    const payme = $('input[id=Payme]').val()
+    // const click = $('input[id=Click]').val()
+    if (payme.chacked){
+        console.log("Payme")
+    }else {
+        console.log("click")
+    }
+    //;charset=UTF-8
+    var headers = {
+        "Content-Type": "application/json",
+        "Access-Control-Origin": "*"
+    }
+    var data =  {
+        "typeOfEducation": educationTypeId,
+        "languageOfEducation": educationLanguageId,
+        "facultyId": facultyId,
+        "departmentId": departmentId,
+        "branchId": filialId,
+    }
+    (async () => {
+        const rawResponse = await fetch('http://localhost:8080/api/v1/public/insEdu', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        const content = await rawResponse.json();
+
+        console.log(content);
+    })();
+    fetch("http://localhost:8080/api/v1/public/insEdu", {
+        method: "POST",
+        headers: headers,
+        body:  JSON.stringify(data)
+    })
+        .then(function(response){
+            if (response.status === 200) {
+                console.log(response)
+                $('#step-1').css('display', "none");
+                $('#step-2').css('display', "none");
+                $('#step-3').css('display', "none");
+                $('#step-4').css('display', "none");
+            }
+            // $('#step-5').css('display', "");
+            return response.json();
+        })
+        .then(function(data){
+            console.log("error")
+            console.log(data)
+        });
+}
+
+function submitThereForm() {
+    const degree = $('select[name=degree]').val()
+    const yearOfGraduation = $('input[name=end_year_education]').val()
+    const diplom_serial = $('input[name=diplom_serial]').val()
+    const diplom_number = $('input[name=diplom_number]').val()
+
+    //;charset=UTF-8
+    var headers = {
+        "Content-Type": "application/json",
+        "Access-Control-Origin": "*"
+        
+    }
+    var data =  {
+        "information": degree,
+        "yearOfGraduation": yearOfGraduation,
+        "certificateOrDiploma": diplom_serial+diplom_number,
+    }
+
+    fetch("http://localhost:8080/api/v1/entrantDoc", {
+        method: "POST",
+        headers: headers,
+        body:  JSON.stringify(data)
+    })
+        .then(function(response){
+            if (response.status === 200) {
+                console.log(response)
+                $('#step-1').css('display', "none");
+                $('#step-2').css('display', "none");
+                $('#step-3').css('display', "none");
+                $('#step-4').css('display', "");
+            }
+            return response.json();
+        })
+        .then(function(data){
+            console.log("error")
+            console.log(data)
+        });
+}
+
+function submitSecondForm() {
+    const code = $('input[name=verificationCode]').val()
+
+    //;charset=UTF-8
+    var headers = {
+        "Content-Type": "application/json",
+        "Access-Control-Origin": "*"
+    }
+    var data =  {
+        "verificationCode": code
+    }
+
+    fetch("http://localhost:8080/api/v1/public/auth/verify", {
+        method: "POST",
+        headers: headers,
+        body:  JSON.stringify(data)
+    })
+        .then(function(response){
+            if (response.status === 200) {
+                console.log(response)
+                $('#step-1').css('display', "none");
+                $('#step-2').css('display', "none");
+                $('#step-3').css('display', "");
+            }
+            return response.json();
+        })
+        .then(function(data){
+            console.log("error")
+            console.log(data)
+        });
+}
+
+function submitFirstForm() {
+    const series = $('input[name=series]').val()
+    const number = $('input[name=number]').val()
+    const passportI = (series + number)
+    const firstName = $('input[name=firstname]').val()
+    const lastName = $('input[name=lastname]').val()
+    const fatherName = $('input[name=father_name]').val()
+    const phoneNumber = $('input[name=phone]').val()
+    const otherPhone = $('input[name=other_number]').val()
+    const regionId = $('select[name=region_id]').val()
+    const districtId = $('select[name=district_id]').val()
+    const birthday = $('input[name=birthdate]').val()
+    const code = $('input[name=code]').val()
+    //;charset=UTF-8
+    var headers = {
+        "Content-Type": "application/json",
+        "Access-Control-Origin": "*"
+    }
+    var data = {
+        "firstName": firstName,
+        "lastName": lastName,
+        "fatherName": fatherName,
+        "phoneNumber": phoneNumber,
+        "otherPhone": otherPhone,
+        "regionId": regionId,
+        "districtId": districtId,
+        "birthday": birthday,
+        "code": code,
+        "passport": passportI,
+    }
+    // (async () => {
+    //     const rawResponse = await fetch('http://localhost:8080/api/v1/user/registerForEntrant', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(data)
+    //     });
+    //     const content = await rawResponse.json();
+    //
+    //     console.log(content);
+    // })();
+    fetch("http://localhost:8080/api/v1/user/registerForEntrant", {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(data)
+    })
+        .then(function (response) {
+            if (response.status === 200) {
+                console.log(response)
+                $('#step-1').css('display', "none");
+                $('#step-2').css('display', "");
+            }
+            return response.json();
+        })
+        .then(function (data) {
+            console.log("error")
+            console.log(data)
+        });
+}
+
+function ValueDate() {
     const birthday = $('select[name=birthdate]').val()
     console.log(birthday)
 }
@@ -48,64 +242,18 @@
 
     <!-- Global ../../site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NX1CQYVMZ3"></script>
-    <script>function submitFirstForm() {
 
-        window.location = 'http://localhost:63343/yangi-asr-ped-instituti/yangi-asr-ped-instituti/pages/uz/registratsa.html?_ijt=d5fbc3rs4fkua8sbg9fs982bv9&_ij_reload=RELOAD_ON_SAVE'
-        // const series = $('input[name=series]').val()
-        // const number = $('input[name=number]').val()
-        // const passportI = (series + number)
-        // const firstName = $('input[name=firstname]').val()
-        // const lastName = $('select[name=lastname]').val()
-        // const fatherName = $('input[name=father_name]').val()
-        // const phoneNumber = $('input[name=phone]').val()
-        // const otherPhone = $('input[name=other_number]').val()
-        // const regionId = $('input[name=region_id]').val()
-        // const districtId = $('select[name=district_id]').val()
-        // const birthday = $('select[name=birthdate]').val()
-        // const code = $('select[name=code]').val()
-        //  //;charset=UTF-8
-        // $.ajax({
-        //     type: 'post',
-        //     url: 'http://localhost:8080/api/v1/user/registerForEntrant',
-        //     dataType: "json",
-        //     async: false,
-        //     contentType: "application/json",
-        //     data:
-        //         {
-        //             firstName: firstName,
-        //             lastName: lastName,
-        //             fatherName: fatherName,
-        //             phoneNumber: phoneNumber,
-        //             otherPhone: otherPhone,
-        //             regionId: regionId,
-        //             districtId: districtId,
-        //             birthday: birthday,
-        //             code: code,
-        //             passport: passportI,
-        //         },
-        //
-        //     success: function (data) {
-        //         // if (data.startsWith("<div") === true) {
-        //         //     $('.search_list').html(data);
-        //         //     getTotalAmount();
-        //         // }
-        //         // else {
-        //         window.location = '/yangi-asr-ped-instituti/yangi-asr-ped-instituti/pages/uz/registratsa.html'
-        //         // }
-        //     }
-        // })
-    }
 
-    window.dataLayer = window.dataLayer || [];
+<!--    window.dataLayer = window.dataLayer || [];-->
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+<!--        function gtag() {-->
+<!--            dataLayer.push(arguments);-->
+<!--        }-->
 
-        gtag('js', new Date());
+<!--        gtag('js', new Date());-->
 
-        gtag('config', 'G-NX1CQYVMZ3');
-    </script>
+<!--        gtag('config', 'G-NX1CQYVMZ3');-->
+<!--    </script>-->
 
     <!-- Meta Pixel Code -->
     <script>
@@ -422,7 +570,7 @@
     </div>
 </section>
 <!--Step 1 start-->
-<div class="register " style="" id="minHeight">
+<div class="register " style="" id="step-1">
 
     <div class="container p-5 opacity-95">
         <div class="card  p-4 shadow">
@@ -445,7 +593,7 @@
                     <p>4-qadam</p>
                 </div>
             </div>
-            <form  action="http://localhost:8080/api/v1/user/registerForEntrant" class="form__template" method="POST"
+            <form  onsubmit="submitFirstForm()" action="" class="form__template" method="POST"
                   enctype="multipart/form-data">
                 <div>
                     <input style="display: none" type="text" name="code" value="1">
@@ -546,7 +694,7 @@
 <!--Step 1 end-->
 
 <!--Step 2 start-->
-<div class="register" id="minHeight">
+<div class="register"  id="step-2">
     <div class="container p-5 opacity-95">
         <div class="card  p-3 shadow">
             <h1>Ro'yxatdan o'tish</h1>
@@ -568,7 +716,7 @@
                     <p>4-qadam</p>
                 </div>
             </div>
-            <form action="http://localhost:20001/api/v1/user/register" class="form__template" method="POST"
+            <form  onsubmit="submitSecondForm()" action="" class="form__template" method="POST"
                   enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="vLnj3TQpjX4O9SXRf2o3moNxeQ8MP22qLgpl1oio">
                 <h5>
@@ -582,7 +730,7 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="">Tasdiqlash kodi <b id="progressBar"></b></label>
-                            <input type="text" required name="key" id="" autocomplete="off" placeholder=""/>
+                            <input type="text" required name="verificationCode" id="" autocomplete="off" placeholder=""/>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -604,7 +752,7 @@
 <!--Step 2 end-->
 
 <!--Step 3 start-->
-<div class="register" id="minHeight">
+<div class="register"  id="step-3">
     <div class="container p-5 opacity-95">
         <div class="card  p-3 shadow">
             <h1>Ro'yxatdan o'tish</h1>
@@ -626,7 +774,7 @@
                     <p>4-qadam</p>
                 </div>
             </div>
-            <form action="http://localhost:20001/api/v1/user/register" class="form__template" method="POST"
+            <form action="" onsubmit="submitThereForm()" class="form__template" method="POST"
                   enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="vLnj3TQpjX4O9SXRf2o3moNxeQ8MP22qLgpl1oio">
                 <div class="row">
@@ -635,9 +783,9 @@
                             <label for="">Ma'lumotingiz*</label>
                             <select class="form-control" required name="degree" style="height: 40px;">
                                 <option>Tanlang</option>
-                                <option value="3">Shu yilgi maktab bitiruvchisiman</option>
-                                <option value="1">Umumiy o'rta ta'lim</option>
-                                <option value="2">O'rta maxsus</option>
+                                <option value="1">Shu yilgi maktab bitiruvchisiman</option>
+                                <option value="2">Umumiy o'rta ta'lim</option>
+                                <option value="3">O'rta maxsus</option>
                             </select>
                         </div>
                     </div>
@@ -705,7 +853,7 @@
 <!--Step 3 end-->
 
 <!--Step 4 start-->
-<div class="register" id="minHeight">
+<div class="register"    id="step-4">
     <div class="container p-5 opacity-95">
         <div class="card  p-3 shadow">
             <h1>Ro'yxatdan o'tish</h1>
@@ -727,7 +875,7 @@
                     <p>4-qadam</p>
                 </div>
             </div>
-            <form action="https://profiuniversity.uz/edu-register/store" class="form__template" method="POST"
+            <form action="" onsubmit="submitFourForm()" class="form__template" method="POST"
                   enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="vLnj3TQpjX4O9SXRf2o3moNxeQ8MP22qLgpl1oio">
                 <div class="row">
@@ -1036,7 +1184,7 @@
         if (id) {
 
             $.getJSON('../../site/district.json', function (data) {
-                console.log(data)
+                // console.log(data)
                 $('#district').html("<option value=''>Tumanni tanlang</option>");
                 $.each(data, function (i, obj) {
                     if (obj.regionId == id) {
@@ -1075,7 +1223,7 @@
         if (id) {
 
             $.getJSON('../../site/department.json', function (data) {
-                console.log(data)
+                // console.log(data)
                 $('#department_id').html(" <option value=''>Tanlang</option>");
                 $.each(data, function (i, obj) {
                     if (obj.facultyId == id) {
@@ -1137,4 +1285,5 @@
 
 </script>
 <script src="../../site/js/main.js"></script>
+<!--<script src="../../site/main/fetch.js"></script>-->
 </html>
